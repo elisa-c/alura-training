@@ -7,13 +7,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UITableViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        print("did load")
+        
     }
-
-
+    
+//    func viewDidLoad(){
+//      "Overriding declaration requires an 'override' keyword"
+//      viewDidLoad is already declared by UIViewController, that is inherited by UITableViewController and consequently by this very class
+//    }
+    
+    
 }
 
