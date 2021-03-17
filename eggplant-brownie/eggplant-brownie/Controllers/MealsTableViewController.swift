@@ -15,7 +15,7 @@ class MealsTableViewController: UITableViewController, AddMealsDelegate {
                  Meal(name: "temaki", happiness: 4),
                  Meal(name: "cookies", happiness: 4)]
     
-    func add(_ meal: Meal) {
+    func add(meal: Meal) {
         meals.append(meal)
         tableView.reloadData()
     }

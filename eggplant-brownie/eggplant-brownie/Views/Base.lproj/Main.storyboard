@@ -29,7 +29,7 @@
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="36"/>
                                 <state key="normal" title="Add"/>
                                 <connections>
-                                    <action selector="add:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dsl-ZP-xt6"/>
+                                    <action selector="add:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jJf-09-jnh"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="cake" textAlignment="center" minimumFontSize="47" translatesAutoresizingMaskIntoConstraints="NO" id="DHx-3o-KIV">
@@ -91,7 +91,7 @@
                     <navigationItem key="navigationItem" id="e1T-ms-ab2">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="Gpq-bq-uel">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" identifier="Add" id="LMA-YW-xDd"/>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="add" id="LMA-YW-xDd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

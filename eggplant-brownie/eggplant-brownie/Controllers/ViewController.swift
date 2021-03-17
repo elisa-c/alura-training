@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         
         let meal = Meal(name: mealName, happiness: happiness)
     
-        delegate?.add(meal)
+        delegate?.add(meal: meal)
         
         navigationController?.popViewController(animated: true)
     }

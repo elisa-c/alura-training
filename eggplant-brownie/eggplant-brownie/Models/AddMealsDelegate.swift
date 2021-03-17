@@ -8,5 +8,5 @@
 import Foundation
 
 protocol AddMealsDelegate {
-    func add(_ meal: Meal) // just the method definition; the implementation is handled by the class using it
+    func add(meal: Meal) // just the method definition; the implementation is handled by the class using it
 }
