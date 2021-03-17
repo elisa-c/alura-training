@@ -8,12 +8,13 @@
 import UIKit
 
 class ViewController: UIViewController {
+        
     @IBOutlet var nameTextField:UITextField?
     @IBOutlet weak var happinessTextField: UITextField?
     
-    var mealsTable: MealsTableViewController?
+    var delegate: AddMealsDelegate?
     
-    @IBAction func add(_ sender: Any){
+    @IBAction func add(_ sender: Any){ // _  hidden parameter
 
         guard let mealName = nameTextField?.text else {
             return
@@ -25,7 +26,7 @@ class ViewController: UIViewController {
         
         let meal = Meal(name: mealName, happiness: happiness)
     
-        mealsTable?.add(meal: meal)
+        delegate?.add(meal)
         
         navigationController?.popViewController(animated: true)
     }

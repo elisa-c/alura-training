@@ -16,6 +16,7 @@
 		66A65E4625FFE4EC0054D42E /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A65E4525FFE4EC0054D42E /* Meal.swift */; };
 		66A65E4925FFE54A0054D42E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A65E4825FFE54A0054D42E /* Item.swift */; };
 		66ECE267260126110036976D /* MealsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ECE266260126110036976D /* MealsTableViewController.swift */; };
+		66ECE26D260194780036976D /* AddMealsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ECE26C260194780036976D /* AddMealsDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		66A65E4525FFE4EC0054D42E /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		66A65E4825FFE54A0054D42E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		66ECE266260126110036976D /* MealsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsTableViewController.swift; sourceTree = "<group>"; };
+		66ECE26C260194780036976D /* AddMealsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealsDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				66A65E4525FFE4EC0054D42E /* Meal.swift */,
 				66A65E4825FFE54A0054D42E /* Item.swift */,
+				66ECE26C260194780036976D /* AddMealsDelegate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				66ECE267260126110036976D /* MealsTableViewController.swift in Sources */,
 				66A65E3325FC4C060054D42E /* ViewController.swift in Sources */,
 				66A65E2F25FC4C060054D42E /* AppDelegate.swift in Sources */,
+				66ECE26D260194780036976D /* AddMealsDelegate.swift in Sources */,
 				66A65E3125FC4C060054D42E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

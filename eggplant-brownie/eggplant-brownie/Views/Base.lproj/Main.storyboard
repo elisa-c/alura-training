@@ -91,7 +91,7 @@
                     <navigationItem key="navigationItem" id="e1T-ms-ab2">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="Gpq-bq-uel">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="LMA-YW-xDd"/>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="Add" id="LMA-YW-xDd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

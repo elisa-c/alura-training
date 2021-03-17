@@ -8,21 +8,25 @@
 
 import UIKit
 
-class MealsTableViewController: UITableViewController {
+class MealsTableViewController: UITableViewController, AddMealsDelegate {
 
     var meals = [Meal(name: "noodles", happiness: 4),
                  Meal(name: "pizza", happiness: 4),
                  Meal(name: "temaki", happiness: 4),
                  Meal(name: "cookies", happiness: 4)]
     
-    func add(meal: Meal) {
+    func add(_ meal: Meal) {
         meals.append(meal)
         tableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let view = segue.destination as! ViewController
-            view.mealsTable = self
+        
+        if segue.identifier == "add" {
+            let view = segue.destination as! ViewController
+                view.delegate = self
+        }
+     
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
