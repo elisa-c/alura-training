@@ -56,11 +56,21 @@ class MealsTableViewController: UITableViewController, AddMealsDelegate {
             
 //          guard let selectedMealName = cell.textLabel?.text else {return}
             
+            func removeMeal(alert: UIAlertAction){
+                print(selectedMeal.name)
+                meals.remove(at: indexPath.row)
+                tableView.reloadData()
+            }
+            
             let alert = UIAlertController(title: selectedMeal.name, message: selectedMeal.details(), preferredStyle: .alert)
         
-            let buttonCancel = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            let buttonCancel = UIAlertAction(title: "OK", style: .cancel)
             
             alert.addAction(buttonCancel)
+            
+            let buttonRemove = UIAlertAction(title: "Remove", style: .destructive, handler: removeMeal)
+            
+            alert.addAction(buttonRemove)
             
             present(alert, animated: true, completion: nil)
             
