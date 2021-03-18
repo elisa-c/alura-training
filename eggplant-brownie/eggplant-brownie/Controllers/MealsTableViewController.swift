@@ -10,50 +10,23 @@ import UIKit
 
 class MealsTableViewController: UITableViewController, AddMealsDelegate {
 
-    var meals = [Meal(name: "Noodles", happiness: 4, items: []),
-                 Meal(name: "Pizza", happiness: 4, items: []),
-                 Meal(name: "Temaki", happiness: 4, items: []),
-                 Meal(name: "Guacamole", happiness: 4, items: [])]
+    var meals: [Meal] = []
     
     override func viewDidLoad() {
-        guard let path = retrievePath() else {return}
-        do {
-            let data = try Data(contentsOf: path)
-            guard let savedMeals = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? Array<Meal> else {return}
-            meals = savedMeals
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
-    
-    func retrievePath() -> URL? {
-        guard let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {return nil}
-        let path = dir.appendingPathComponent("meal")
-        
-        return path
+        var mealList = MealDao().retrieve()
     }
     
     func add(meal: Meal) {
         meals.append(meal)
         tableView.reloadData()
-        
-        guard let path = retrievePath() else {return}
-            
-        do {
-            let data = try NSKeyedArchiver.archivedData(withRootObject: meals, requiringSecureCoding: false)
-            try data.write(to: path)
-        } catch {
-            print(error.localizedDescription)
+        MealDao().save(meals)
         }
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if segue.identifier == "add" {
             let view = segue.destination as! ViewController
                 view.delegate = self
         }
-     
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

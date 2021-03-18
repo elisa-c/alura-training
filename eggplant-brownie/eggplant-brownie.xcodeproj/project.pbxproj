@@ -21,6 +21,7 @@
 		66ECE272260248E30036976D /* AddIngredientsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66ECE270260248E30036976D /* AddIngredientsViewController.xib */; };
 		66FD02D72602C7E4000019A4 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FD02D62602C7E4000019A4 /* Alert.swift */; };
 		66FD02DA2602EACE000019A4 /* RemoveMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FD02D92602EACE000019A4 /* RemoveMealViewController.swift */; };
+		66FD02DD26039B8A000019A4 /* MealDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FD02DC26039B8A000019A4 /* MealDao.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		66ECE270260248E30036976D /* AddIngredientsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddIngredientsViewController.xib; sourceTree = "<group>"; };
 		66FD02D62602C7E4000019A4 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		66FD02D92602EACE000019A4 /* RemoveMealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveMealViewController.swift; sourceTree = "<group>"; };
+		66FD02DC26039B8A000019A4 /* MealDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDao.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				66A65E4825FFE54A0054D42E /* Item.swift */,
 				66ECE26C260194780036976D /* AddMealsDelegate.swift */,
 				66FD02D62602C7E4000019A4 /* Alert.swift */,
+				66FD02DC26039B8A000019A4 /* MealDao.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				66FD02D72602C7E4000019A4 /* Alert.swift in Sources */,
 				66A65E4925FFE54A0054D42E /* Item.swift in Sources */,
 				66A65E4625FFE4EC0054D42E /* Meal.swift in Sources */,
+				66FD02DD26039B8A000019A4 /* MealDao.swift in Sources */,
 				66FD02DA2602EACE000019A4 /* RemoveMealViewController.swift in Sources */,
 				66ECE267260126110036976D /* MealsTableViewController.swift in Sources */,
 				66A65E3325FC4C060054D42E /* ViewController.swift in Sources */,
