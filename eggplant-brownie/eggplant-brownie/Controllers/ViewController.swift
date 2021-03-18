@@ -31,6 +31,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         let btnAddItem = UIBarButtonItem(title: "add", style: .plain, target: self, action: #selector(addItem))
         navigationItem.rightBarButtonItem = btnAddItem
+        
+        do {
+            guard let dir = retrievePath() else {return}
+            let data = try Data(contentsOf: dir)
+            let savedItems = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as! [Item]
+            items = savedItems
+        } catch {
+            print(error.localizedDescription)
+        }
+        
     }
     
     @objc func addItem(){ // @objc to use objective-c methods such as Selector
@@ -44,8 +54,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             tableView.reloadData()
         } else {
             Alert(controller: self).show(message: "It wasn't possible to update the table")
-            
         }
+        
+        do {
+            let data = try NSKeyedArchiver.archivedData(withRootObject: items, requiringSecureCoding: false)
+            guard let path = retrievePath() else {return}
+            try data.write(to: path)
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+    }
+    
+    func retrievePath() -> URL? {
+        guard let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
+        let path = dir.appendingPathComponent("items")
+        
+        return path
     }
     
     

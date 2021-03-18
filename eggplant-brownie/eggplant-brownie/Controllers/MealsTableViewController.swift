@@ -15,9 +15,36 @@ class MealsTableViewController: UITableViewController, AddMealsDelegate {
                  Meal(name: "Temaki", happiness: 4, items: []),
                  Meal(name: "Guacamole", happiness: 4, items: [])]
     
+    override func viewDidLoad() {
+        guard let path = retrievePath() else {return}
+        do {
+            let data = try Data(contentsOf: path)
+            guard let savedMeals = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? Array<Meal> else {return}
+            meals = savedMeals
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func retrievePath() -> URL? {
+        guard let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {return nil}
+        let path = dir.appendingPathComponent("meal")
+        
+        return path
+    }
+    
     func add(meal: Meal) {
         meals.append(meal)
         tableView.reloadData()
+        
+        guard let path = retrievePath() else {return}
+            
+        do {
+            let data = try NSKeyedArchiver.archivedData(withRootObject: meals, requiringSecureCoding: false)
+            try data.write(to: path)
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
